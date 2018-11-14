@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.quote_read);
 
-        ImageView iv = (ImageView) findViewById(R.id.imageView);
+        ImageView iv = (ImageView) findViewById(R.id.imageView7);
 
-        CircleImageView cv = (CircleImageView) findViewById(R.id.profile_image);
+        //CircleImageView cv = (CircleImageView) findViewById(R.id.profile_image);
 
 
 
@@ -39,21 +39,19 @@ public class MainActivity extends AppCompatActivity {
             // load image as Drawable
             Drawable d = Drawable.createFromStream(ims, null);
             // set image to ImageView
+
             iv.setImageDrawable(d);
-
-
-            cv.setImageDrawable(d);
 
             final int semiTransparentGrey = Color.argb(80, 255, 0, 0);
 
-            cv.setColorFilter(semiTransparentGrey, PorterDuff.Mode.SRC_ATOP);
+            iv.setColorFilter(semiTransparentGrey, PorterDuff.Mode.SRC_ATOP);
         }
         catch(IOException ex) {
             return;
         }
 
 
-        Thread thread = new Thread() {
+        /*Thread thread = new Thread() {
             @Override
             public void run() {
                 boolean a = true;
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
 
     }
